@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "cine-ia",
+  "displayName": "Cine IA",
+  "version": "1.0.0",
+  "description": "Pipeline de 9 pasos para producir cortometrajes con IA, de la idea al video listo para YouTube.",
+  "author": { "name": "Ismael Muñoz", "url": "https://github.com/ismaelmp-ia" },
+  "license": "MIT",
+  "keywords": ["video", "cortometraje", "ia", "youtube", "produccion"]
+}

@@ -1,0 +1,17 @@
+{
+  "nombre": "TU MARCA",
+  "logo": "",
+  "logo_recorte_emblema": null,
+  "firma_cierre": "Tu frase de cierre, la que va en la última placa.",
+  "voz": "español neutro",
+  "texto_deslizar": "Deslizar →",
+  "colores": {
+    "abismo": "#0B0F16",
+    "punto": "rgba(150,170,200,.10)",
+    "cyan": "#5AA9E6",
+    "blanco": "#EDF2F7",
+    "blanco_suave": "rgba(237,242,247,.78)",
+    "gris": "#8A96A8",
+    "rojo": "#E5484D"
+  }
+}

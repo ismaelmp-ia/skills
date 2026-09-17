@@ -1,0 +1,145 @@
+/* Sistema visual para las placas: fondo oscuro con cuadrícula de puntos,
+   un solo color de acento, títulos en Anton y etiquetas monoespaciadas.
+   Los colores llegan desde mi-marca.json como variables CSS;
+   la maqueta se edita en este archivo. */
+
+@font-face { font-family: "Anton"; src: url("../assets/fonts/Anton.ttf"); }
+@font-face { font-family: "Space Grotesk"; src: url("../assets/fonts/SpaceGrotesk.ttf"); font-weight: 300 700; }
+@font-face { font-family: "JetBrains Mono"; src: url("../assets/fonts/JetBrainsMono.ttf"); font-weight: 100 800; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--abismo); }
+body { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+
+.slide {
+  position: relative; width: 1080px; height: 1350px;
+  display: flex; flex-direction: column;
+  padding: 76px 80px 70px;
+  color: var(--blanco);
+  background:
+    radial-gradient(circle at 1.5px 1.5px, var(--punto) 1.5px, transparent 1.6px) 0 0 / 36px 36px,
+    radial-gradient(120% 70% at 85% 0%, rgba(60,195,234,.10), transparent 60%),
+    var(--abismo);
+  overflow: hidden;
+}
+
+/* ---------- cabecera y pie ---------- */
+
+.cabecera, .pie { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; }
+.cabecera { margin-bottom: 44px; }
+.pie { margin-top: 44px; }
+
+.etiqueta, .pagina, .deslizar, .credito {
+  font-family: "JetBrains Mono", monospace; font-size: 26px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--gris);
+}
+.etiqueta { display: flex; align-items: center; gap: 14px; color: var(--blanco); }
+.etiqueta::before { content: ""; width: 14px; height: 14px; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+.deslizar { color: var(--cyan); }
+
+.firma-marca { display: flex; align-items: center; gap: 14px; }
+.firma-marca img { width: 60px; height: 60px; mix-blend-mode: screen; margin-left: -6px; }
+.firma-marca span { font-family: "Space Grotesk"; font-weight: 700; font-size: 26px; letter-spacing: .2em; }
+
+.progreso { position: absolute; left: 0; bottom: 0; width: 100%; height: 6px; background: rgba(143,163,199,.14); z-index: 4; }
+.progreso span { display: block; height: 100%; background: var(--cyan); box-shadow: 0 0 18px var(--cyan); }
+
+/* ---------- tipografía ---------- */
+
+.cuerpo { position: relative; z-index: 2; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+
+.barra { width: 88px; height: 8px; background: var(--cyan); box-shadow: 0 0 22px rgba(60,195,234,.55); margin-bottom: 34px; flex: none; }
+
+.titular {
+  font-family: "Anton", Impact, sans-serif; font-weight: 400;
+  text-transform: uppercase; line-height: 1.0; letter-spacing: .005em;
+  text-wrap: balance;
+}
+em { font-style: normal; color: var(--cyan); text-shadow: 0 0 34px rgba(60,195,234,.35); }
+.rojo { color: var(--rojo); }
+
+.texto { font-weight: 400; line-height: 1.34; color: var(--blanco_suave); text-wrap: pretty; }
+.texto strong { color: var(--blanco); font-weight: 700; }
+
+.fuente {
+  margin-top: 34px; font-family: "JetBrains Mono", monospace; font-size: 23px;
+  letter-spacing: .06em; color: var(--gris); text-transform: uppercase;
+}
+
+/* ---------- portada con foto ---------- */
+
+.foto { position: absolute; left: 0; top: 0; width: 100%; background-size: cover; background-repeat: no-repeat; z-index: 1; }
+.foto::after { content: ""; position: absolute; inset: 0; }
+.portada-sangre .foto { height: 100%; }
+.portada-sangre .foto::after {
+  background: linear-gradient(180deg, rgba(5,9,18,.62) 0%, rgba(5,9,18,0) 20%, rgba(5,9,18,0) 38%, rgba(5,9,18,.92) 68%, var(--abismo) 100%);
+}
+.portada-media .foto { height: 60%; }
+.portada-media .foto::after {
+  background: linear-gradient(180deg, rgba(5,9,18,.62) 0%, rgba(5,9,18,0) 24%, rgba(5,9,18,0) 58%, var(--abismo) 100%);
+}
+.portada-sangre .cuerpo, .portada-media .cuerpo { justify-content: flex-end; }
+.bajada { margin-top: 30px; }
+.credito { position: absolute; right: 80px; z-index: 3; font-size: 16px; letter-spacing: .06em; color: rgba(234,242,255,.8); background: rgba(5,9,18,.55); padding: 6px 10px; }
+.portada-sangre .credito, .portada-media .credito { top: 132px; }
+
+/* ---------- cifra ---------- */
+
+.cifra {
+  font-family: "Anton", Impact, sans-serif; line-height: .86; color: var(--cyan);
+  text-shadow: 0 0 60px rgba(60,195,234,.35); white-space: nowrap; margin-bottom: 40px;
+}
+
+/* ---------- punto ---------- */
+
+.numero {
+  font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 27px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--cyan);
+  display: flex; align-items: center; gap: 18px; margin-bottom: 36px;
+}
+.numero::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(60,195,234,.6), transparent); }
+.punto .texto { margin-top: 36px; }
+
+/* ---------- paneles (lista, comparación, cierre) ---------- */
+
+.panel {
+  background: linear-gradient(180deg, rgba(20,34,64,.55), rgba(10,18,36,.55));
+  border: 1px solid rgba(60,195,234,.22);
+  box-shadow: inset 0 1px 0 rgba(234,242,255,.05), 0 0 0 1px rgba(5,9,18,.6);
+  border-radius: 6px;
+}
+
+.lista { margin-top: 44px; display: flex; flex-direction: column; gap: 18px; }
+.item { display: grid; grid-template-columns: 84px 1fr; align-items: start; padding: 30px 34px; }
+.item .marca-item { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--gris); padding-top: 4px; }
+.item .texto-item { font-weight: 600; line-height: 1.2; color: var(--blanco_suave); }
+.item .nota { display: block; margin-top: 12px; font-family: "JetBrains Mono", monospace; font-size: 23px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gris); }
+.item.destacado { border-color: rgba(60,195,234,.75); box-shadow: 0 0 40px rgba(60,195,234,.14), inset 0 0 40px rgba(60,195,234,.06); }
+.item.destacado .marca-item, .item.destacado .nota { color: var(--cyan); }
+.item.destacado .texto-item { color: var(--blanco); }
+
+.comparacion { margin-top: 44px; display: flex; flex-direction: column; gap: 22px; }
+.bloque { padding: 30px 38px 18px; }
+.bloque h3 { font-family: "JetBrains Mono", monospace; font-size: 24px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 8px; }
+.bloque.pierde h3 { color: var(--rojo); }
+.bloque.gana h3 { color: var(--cyan); }
+.bloque.gana { border-color: rgba(60,195,234,.7); box-shadow: 0 0 44px rgba(60,195,234,.12); }
+.fila { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-top: 1px solid rgba(143,163,199,.14); font-weight: 600; }
+.fila:first-of-type { border-top: 0; }
+.fila .valor { font-family: "Anton", Impact, sans-serif; letter-spacing: .02em; }
+.bloque.pierde .valor { color: var(--rojo); }
+.bloque.gana .valor { color: var(--cyan); }
+
+/* ---------- cita ---------- */
+
+.comillas { font-family: "Anton", Impact, sans-serif; font-size: 220px; line-height: .8; height: 130px; color: var(--cyan); text-shadow: 0 0 40px rgba(60,195,234,.4); }
+.cita { font-weight: 500; line-height: 1.16; letter-spacing: -.015em; text-wrap: balance; }
+.autor { margin-top: 48px; padding-left: 24px; border-left: 4px solid var(--cyan); display: flex; flex-direction: column; gap: 8px; }
+.autor strong { font-size: 34px; font-weight: 700; }
+.autor span { font-family: "JetBrains Mono", monospace; font-size: 24px; letter-spacing: .08em; text-transform: uppercase; color: var(--gris); }
+
+/* ---------- cierre ---------- */
+
+.cierre .emblema-fondo { position: absolute; right: -170px; top: 120px; width: 760px; height: 760px; mix-blend-mode: screen; opacity: .16; z-index: 1; }
+.pregunta { margin-top: 48px; padding: 36px 40px; font-weight: 600; line-height: 1.24; }
+.firma { margin-top: 36px; font-family: "JetBrains Mono", monospace; font-size: 27px; letter-spacing: .06em; line-height: 1.5; color: var(--cyan); }

@@ -1,0 +1,6 @@
+mi-marca.json
+.venv/
+**/assets/fonts/*.ttf
+.env
+.DS_Store
+__pycache__/

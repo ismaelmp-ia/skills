@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "skills",
+  "owner": { "name": "Ismael Muñoz", "url": "https://github.com/ismaelmp-ia" },
+  "description": "Skills de Claude Code para crear contenido: posts de LinkedIn y cortometrajes con IA.",
+  "plugins": [
+    {
+      "name": "linkedin-post-generator",
+      "source": "./linkedin-post-generator",
+      "description": "Convierte un tema o una noticia en un post de LinkedIn listo para publicar: imagen o carrusel en PDF con tu identidad visual, texto con fuentes verificadas.",
+      "license": "MIT",
+      "keywords": ["linkedin", "contenido", "carrusel", "diseño", "marketing"]
+    },
+    {
+      "name": "cine-ia",
+      "source": "./cine-ia",
+      "description": "Pipeline de 9 pasos para producir cortometrajes con IA, de la idea al video listo para YouTube.",
+      "license": "MIT",
+      "keywords": ["video", "cortometraje", "ia", "youtube", "produccion"]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "linkedin-post-generator",
+  "displayName": "LinkedIn Post Generator",
+  "version": "1.0.0",
+  "description": "Convierte un tema o una noticia en un post de LinkedIn listo para publicar: imagen o carrusel en PDF con tu identidad visual, texto con fuentes verificadas.",
+  "author": { "name": "Ismael Muñoz", "url": "https://github.com/ismaelmp-ia" },
+  "license": "MIT",
+  "keywords": ["linkedin", "contenido", "carrusel", "diseño", "marketing"]
+}
