@@ -5,6 +5,7 @@ Herramientas que uso todos los días para crear contenido, listas para que las u
 | Skill | Qué hace | Qué necesitás |
 |---|---|---|
 | **linkedin-post-generator** | De un tema o una noticia a un post de LinkedIn listo para publicar: imagen 4:5 o carrusel en PDF, con tu marca, y el texto con cada dato verificado y su fuente | Python 3.10+, un navegador (Chrome, Brave, Edge o Chromium) y una cuenta de Apify para buscar fotos. Cuesta centavos por post |
+| **tweet-carousel** | De un tweet a un carrusel de Instagram cinematográfico: lee el tweet, escribe los slides y genera las imágenes | Python 3.10+, las cookies de tu sesión de X y una cuenta de Kie AI (de pago) para las imágenes |
 | **cine-ia** | Pipeline de 9 pasos para producir un cortometraje con IA, de la idea al video listo para YouTube: guion, personajes consistentes, imágenes, video, voz y montaje | Nada instalado. Necesitás cuentas en las herramientas de imagen, video y voz que uses |
 
 ## Instalar
@@ -14,6 +15,8 @@ Dentro de Claude Code:
 ```
 /plugin marketplace add ismaelmp-ia/skills
 /plugin install linkedin-post-generator@skills
+/plugin install tweet-carousel@skills
+/plugin install cine-ia@skills
 ```
 
 O, si preferís hacerlo a mano:

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "tweet-carousel",
+  "displayName": "Tweet → Carrusel",
+  "version": "1.0.0",
+  "description": "Convierte un tweet en un carrusel de Instagram cinematográfico con tu marca: lee el tweet, escribe los slides y genera las imágenes con Kie AI.",
+  "author": { "name": "Ismael Muñoz", "url": "https://github.com/ismaelmp-ia" },
+  "license": "MIT",
+  "keywords": ["instagram", "carrusel", "twitter", "contenido", "ia"]
+}
